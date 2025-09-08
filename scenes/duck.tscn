@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://du884gvjfxqgd"]
+
+[ext_resource type="Texture2D" uid="uid://bfgdxgsgwgps4" path="res://assets/duck/duckie0.png" id="1_ql0qm"]
+[ext_resource type="Script" uid="uid://cdexfs50ndqmp" path="res://scripts/duck.gd" id="1_tils5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kee5c"]
+
+[node name="duck" type="CharacterBody2D"]
+script = ExtResource("1_tils5")
+
+[node name="Duckie0" type="Sprite2D" parent="."]
+position = Vector2(28.85, 25.165)
+texture = ExtResource("1_ql0qm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8.41, 8.41)
+shape = SubResource("CircleShape2D_kee5c")

@@ -12,6 +12,6 @@ script = ExtResource("1_tils5")
 position = Vector2(28.85, 25.165)
 texture = ExtResource("1_ql0qm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="duck_collision" type="CollisionShape2D" parent="."]
 scale = Vector2(8.41, 8.41)
 shape = SubResource("CircleShape2D_kee5c")

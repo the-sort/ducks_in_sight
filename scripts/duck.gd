@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var res 
 var dest : Vector2
-var speed = 1000
+const speed = 1000
 
 func _ready() -> void:
 	res =  get_viewport_rect().size

@@ -34,8 +34,7 @@ func set_angle(direction : Vector2, flip : int = 1) -> void :
 		
 	var angle : float = snappedf( direction.y / 0.022, 1)  * flip
 	if direction.y < 0 :
-		#-----------
 		$duck_animated.rotation_degrees = angle 
 		
-	if direction.x > 0 :
+	if direction.y > 0 :
 		$duck_animated.rotation_degrees = angle 

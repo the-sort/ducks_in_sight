@@ -1,20 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://brmnat4kfnbj6"]
+[gd_scene load_steps=3 format=3 uid="uid://7oek7fnkeg7o"]
 
-[ext_resource type="PackedScene" uid="uid://du884gvjfxqgd" path="res://scenes/duck.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://djjprb00vq7fk" path="res://spawner.gd" id="2_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://dgodhllbho26w" path="res://scenes/crosshair.tscn" id="2_pw63i"]
 
 [node name="main_scene" type="Node"]
 
-[node name="duck" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(841, 282)
+[node name="spawner" type="Timer" parent="."]
+autostart = true
+script = ExtResource("2_7ykc4")
 
 [node name="crosshair" parent="." instance=ExtResource("2_pw63i")]
 position = Vector2(960, 540)
 disable_mode = 1
 input_pickable = true
 
-[node name="duck2" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(849, 286)
-
-[node name="duck3" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(1262, 345)
+[connection signal="timeout" from="spawner" to="spawner" method="_on_timeout"]

@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://drhfiu1qootmc"]
+[gd_scene load_steps=2 format=3 uid="uid://drhfiu1qootmc"]
+
+[ext_resource type="Script" uid="uid://blfpwerb0omqx" path="res://scripts/game_over.gd" id="1_xeevv"]
 
 [node name="game_over" type="Node"]
+script = ExtResource("1_xeevv")
 
-[node name="Label" type="Label" parent="."]
+[node name="game_over_text" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,12 +37,15 @@ grow_vertical = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="restart" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "RESTART"
 
-[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "QUIT"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

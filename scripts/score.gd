@@ -12,6 +12,8 @@ func _ready() -> void:
 func _on_crosshair_shot(total: int) -> void: #need to connect to signal
 	if total == 0 :
 		ammo -= 1
+		if ammo == 0 :
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		$ammo.text =  "Ammo : " + str(ammo)
 		return
 	score_i += total

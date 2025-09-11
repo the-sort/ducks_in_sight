@@ -7,6 +7,10 @@ const speed : int = 500
 
 var dest : Vector2
 
+func _ready() -> void:
+	position = Vector2(randf_range(0, res.x), randf_range(0, res.y))
+	dest = position
+
 func _physics_process(_delta: float) -> void:
 	velocity =  position.direction_to(dest) * speed
 

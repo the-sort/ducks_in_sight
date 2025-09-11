@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://brmnat4kfnbj6"]
+[gd_scene load_steps=3 format=3 uid="uid://brmnat4kfnbj6"]
 
 [ext_resource type="PackedScene" uid="uid://du884gvjfxqgd" path="res://scenes/duck.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://dgodhllbho26w" path="res://scenes/crosshair.tscn" id="2_pw63i"]
 
 [node name="main_scene" type="Node"]
 
 [node name="duck" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(972, 494)
+position = Vector2(478, 342)
+
+[node name="crosshair" parent="." instance=ExtResource("2_pw63i")]
+position = Vector2(960, 540)
+disable_mode = 1
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+
+[node name="duck2" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(794, 766)

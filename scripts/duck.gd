@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var res 
-var dest : Vector2
-const speed = 1000
+@onready var res : Vector2 = get_viewport_rect().size
 
-func _ready() -> void:
-	res =  get_viewport_rect().size
+const value : int = 10 
+const speed : int = 500
+
+var dest : Vector2
 
 func _physics_process(_delta: float) -> void:
 	velocity =  position.direction_to(dest) * speed

@@ -29,6 +29,7 @@ animations = [{
 }]
 
 [node name="duck" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_tils5")
 
 [node name="duck_collision" type="CollisionShape2D" parent="."]

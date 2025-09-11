@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 const speed : int = 1000
+
 var dest : Vector2
-var in_sight : Dictionary[int , Node2D]
+var in_sight : Dictionary[ int , Node2D ]
+var total
+
+signal shot( total : int )
 
 
 func _ready() -> void:
@@ -10,13 +14,14 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("l_click"):
-		#print("l_click")
 		dest = get_global_mouse_position()
 	
 	if event.is_action_pressed("shot"):
-		#print("spacebar")
+		total = 0
 		for key in in_sight :
+			total += in_sight[key].value  #every object that can be detected in sight needs to have value assigned
 			in_sight[key].queue_free()
+		shot.emit(total)
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO

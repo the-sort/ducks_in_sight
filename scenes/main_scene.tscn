@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://7oek7fnkeg7o"]
+[gd_scene load_steps=4 format=3 uid="uid://7oek7fnkeg7o"]
 
-[ext_resource type="Script" uid="uid://djjprb00vq7fk" path="res://spawner.gd" id="2_7ykc4"]
+[ext_resource type="Script" uid="uid://cu24j6ukaadum" path="res://scripts/score.gd" id="1_7ykc4"]
+[ext_resource type="Script" uid="uid://djjprb00vq7fk" path="res://scripts/spawner.gd" id="2_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://dgodhllbho26w" path="res://scenes/crosshair.tscn" id="2_pw63i"]
 
 [node name="main_scene" type="Node"]
@@ -14,4 +15,31 @@ position = Vector2(960, 540)
 disable_mode = 1
 input_pickable = true
 
+[node name="hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ykc4")
+
+[node name="score" type="Label" parent="hud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+
+[node name="ammo" type="Label" parent="hud"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+
 [connection signal="timeout" from="spawner" to="spawner" method="_on_timeout"]
+[connection signal="shot" from="crosshair" to="hud" method="_on_crosshair_shot"]

@@ -6,5 +6,4 @@ extends Node
 
 func _on_timeout() -> void:
 	add_child(duck_scene.instantiate())
-	pass # Replace with function body.
  

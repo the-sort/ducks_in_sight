@@ -6,14 +6,15 @@
 [node name="main_scene" type="Node"]
 
 [node name="duck" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(478, 342)
+position = Vector2(841, 282)
 
 [node name="crosshair" parent="." instance=ExtResource("2_pw63i")]
 position = Vector2(960, 540)
 disable_mode = 1
-collision_layer = 2
-collision_mask = 2
 input_pickable = true
 
 [node name="duck2" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(794, 766)
+position = Vector2(849, 286)
+
+[node name="duck3" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(1262, 345)

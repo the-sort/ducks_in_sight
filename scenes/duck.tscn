@@ -35,6 +35,7 @@ script = ExtResource("1_tils5")
 [node name="duck_collision" type="CollisionShape2D" parent="."]
 scale = Vector2(8.41, 8.41)
 shape = SubResource("CircleShape2D_kee5c")
+debug_color = Color(0.949604, 0, 0.57268, 0.42)
 
 [node name="duck_animated" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.645, 0)

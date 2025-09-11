@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="duck_hunt_f"
-run/main_scene="uid://brmnat4kfnbj6"
+run/main_scene="uid://7oek7fnkeg7o"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

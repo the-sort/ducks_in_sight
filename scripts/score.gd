@@ -1,7 +1,7 @@
 extends Node
 
 @onready var score_i : int = 0
-@onready var ammo = 10
+@onready var ammo = 5
 
 
 func _ready() -> void:
@@ -9,7 +9,7 @@ func _ready() -> void:
 	$ammo.text =  "Ammo : " + str(ammo)
 
 
-func _on_crosshair_shot(total: int) -> void:
+func _on_crosshair_shot(total: int) -> void: #need to connect to signal
 	if total == 0 :
 		ammo -= 1
 		$ammo.text =  "Ammo : " + str(ammo)

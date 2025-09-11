@@ -9,10 +9,12 @@ func _ready() -> void:
 	dest = position
 
 func _input(event: InputEvent) -> void:
-	if MOUSE_BUTTON_LEFT && event.is_pressed():
+	if event.is_action_pressed("l_click"):
+		#print("l_click")
 		dest = get_global_mouse_position()
 	
 	if event.is_action_pressed("shot"):
+		#print("spacebar")
 		for key in in_sight :
 			in_sight[key].queue_free()
 

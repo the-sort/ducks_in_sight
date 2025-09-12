@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://du2v1331fsqr4"]
+[gd_scene load_steps=3 format=3 uid="uid://du2v1331fsqr4"]
 
 [ext_resource type="Script" uid="uid://cu24j6ukaadum" path="res://scripts/score.gd" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://dbijyw6x47ojl" path="res://assets/fonts/yoster.ttf" id="2_oo0fn"]
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ script = ExtResource("1_37p78")
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 50
 vertical_alignment = 1
 
@@ -26,6 +28,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 2
 vertical_alignment = 1

@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://drhfiu1qootmc"]
+[gd_scene load_steps=4 format=3 uid="uid://drhfiu1qootmc"]
 
 [ext_resource type="Script" uid="uid://blfpwerb0omqx" path="res://scripts/game_over.gd" id="1_xeevv"]
+[ext_resource type="Texture2D" uid="uid://dng6r3gcmsoih" path="res://assets/background/sky_background_desaturated.png" id="2_wqhvx"]
+[ext_resource type="FontFile" uid="uid://dbijyw6x47ojl" path="res://assets/fonts/yoster.ttf" id="3_tbwuq"]
 
 [node name="game_over" type="Node"]
 script = ExtResource("1_xeevv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wqhvx")
+expand_mode = 1
 
 [node name="game_over_text" type="Label" parent="."]
 anchors_preset = 8
@@ -17,6 +28,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tbwuq")
 theme_override_font_sizes/font_size = 250
 text = "GAME OVER !"
 horizontal_alignment = 1
@@ -39,11 +52,13 @@ layout_mode = 2
 
 [node name="restart" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tbwuq")
 theme_override_font_sizes/font_size = 100
 text = "RESTART"
 
 [node name="quit" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tbwuq")
 theme_override_font_sizes/font_size = 100
 text = "QUIT"
 

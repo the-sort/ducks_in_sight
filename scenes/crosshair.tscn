@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgodhllbho26w"]
+[gd_scene load_steps=6 format=3 uid="uid://dgodhllbho26w"]
 
 [ext_resource type="Script" uid="uid://d70nytg5np00" path="res://scripts/crosshair.gd" id="1_norqy"]
 [ext_resource type="Texture2D" uid="uid://xqljqlx80rj5" path="res://assets/crosshair/lens_with_glass.png" id="2_qnjby"]
+[ext_resource type="AudioStream" uid="uid://bggeawh2tcjtw" path="res://audio/51749__erkanozan__gunshot.wav" id="3_qnjby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnjby"]
 
@@ -23,6 +24,9 @@ debug_color = Color(0.951043, 3.27289e-06, 0.565615, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/hitbox"]
 shape = SubResource("RectangleShape2D_norqy")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qnjby")
 
 [connection signal="body_entered" from="CollisionShape2D/hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="CollisionShape2D/hitbox" to="." method="_on_hitbox_body_exited"]

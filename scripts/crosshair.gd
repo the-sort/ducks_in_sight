@@ -18,6 +18,7 @@ func _input(event: InputEvent) -> void:
 		dest = get_global_mouse_position()
 	
 	if event.is_action_pressed("shot"):
+		$sound.play()
 		total_score = 0
 		total_time = 0
 		for key in in_sight :

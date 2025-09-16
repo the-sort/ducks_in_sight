@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0r68l5ihauki"]
+[gd_scene load_steps=7 format=3 uid="uid://c0r68l5ihauki"]
 
 [ext_resource type="Script" uid="uid://dowmm6wd127jp" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Texture2D" uid="uid://ccu4ywnjg3374" path="res://assets/background/main_menu.png" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://dbijyw6x47ojl" path="res://assets/fonts/yoster.ttf" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://d38kt0872pjf0" path="res://assets/button/button#1.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://decxlbwmrvcj8" path="res://assets/button/button_hover#1.png" id="4_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://dwj1cb7yb4m5c" path="res://audio/title_song.mp3" id="6_rtw2f"]
 
 [node name="main_menu" type="Node"]
 script = ExtResource("1_8ln24")
@@ -79,6 +80,11 @@ theme_override_font_sizes/font_size = 100
 text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="audio" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/quit"]
+stream = ExtResource("6_rtw2f")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

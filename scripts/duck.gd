@@ -4,6 +4,7 @@ class_name Duck2D
 @onready var res : Vector2 = get_viewport_rect().size
 
 const value : int = 10 
+const time : int = 5
 
 var speed : float = 500
 var dest : Vector2

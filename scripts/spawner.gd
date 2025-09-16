@@ -7,6 +7,10 @@ var speed_multiplier : float = 1
 
 @export var limit : int = 10
 
+func _ready() -> void:
+	duck = duck_scene.instantiate()
+	add_child(duck)
+
 func _on_timeout() -> void:
 	if get_child_count() == limit :
 		return

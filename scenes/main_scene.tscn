@@ -39,3 +39,4 @@ input_pickable = true
 
 [connection signal="timeout" from="spawner" to="spawner" method="_on_timeout"]
 [connection signal="shot" from="crosshair" to="hud" method="_on_crosshair_shot"]
+[connection signal="speed_up" from="hud" to="spawner" method="_on_hud_speed_up"]

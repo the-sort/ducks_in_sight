@@ -3,6 +3,7 @@ extends Node
 @onready var score_i : int = 0
 @onready var ammo = 5
 
+signal speed_up
 
 func _ready() -> void:
 	$score.text = "Score : " + str(score_i)
@@ -16,5 +17,9 @@ func _on_crosshair_shot(total: int) -> void: #need to connect to signal
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		$ammo.text =  "Ammo : " + str(ammo)
 		return
+	
 	score_i += total
 	$score.text = "Score : " + str(score_i)
+	
+	if score_i != 0 && score_i % 50 == 0 :
+		speed_up.emit()

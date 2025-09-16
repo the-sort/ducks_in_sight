@@ -1,10 +1,11 @@
 extends CharacterBody2D
+class_name Duck2D
 
 @onready var res : Vector2 = get_viewport_rect().size
 
 const value : int = 10 
-const speed : int = 500
 
+var speed : float = 500
 var dest : Vector2
 
 func _ready() -> void:

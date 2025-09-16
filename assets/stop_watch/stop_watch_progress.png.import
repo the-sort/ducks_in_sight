@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di3nce0qc4g3n"
-path="res://.godot/imported/stop_watch_progress.png-0016e0ae7534700e71a65afca179ae60.ctex"
+path="res://.godot/imported/stop_watch_progress.png-49d48757b49e07e8ae9507f58c84d16e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/progress_bar/stop_watch_progress.png"
-dest_files=["res://.godot/imported/stop_watch_progress.png-0016e0ae7534700e71a65afca179ae60.ctex"]
+source_file="res://assets/stop_watch/stop_watch_progress.png"
+dest_files=["res://.godot/imported/stop_watch_progress.png-49d48757b49e07e8ae9507f58c84d16e.ctex"]
 
 [params]
 

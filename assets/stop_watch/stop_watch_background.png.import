@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkudtoykwkbw2"
-path="res://.godot/imported/stop_watch_background.png-0427a07dae2b660e663088b9743f3e47.ctex"
+path="res://.godot/imported/stop_watch_background.png-c2af3d2208ca176cfab0361535d40afd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/progress_bar/stop_watch_background.png"
-dest_files=["res://.godot/imported/stop_watch_background.png-0427a07dae2b660e663088b9743f3e47.ctex"]
+source_file="res://assets/stop_watch/stop_watch_background.png"
+dest_files=["res://.godot/imported/stop_watch_background.png-c2af3d2208ca176cfab0361535d40afd.ctex"]
 
 [params]
 

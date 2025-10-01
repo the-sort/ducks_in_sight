@@ -1,7 +1,7 @@
 extends Node
 
 @onready var save_path : String = "user://savegame.tres"
-@onready var score_i : int = 0
+#@onready var score_i : int = 0
 @onready var score_b : int = 0
 @onready var ammo : int = 5
 @onready var loaded : CSavable
@@ -10,7 +10,8 @@ extends Node
 signal speed_up
 
 func _ready() -> void:
-	$HBoxContainer/VBoxContainer/score.text = "Score : " + str(score_i)
+	Score.score = 0
+	$HBoxContainer/VBoxContainer/score.text = "Score : " + str(Score.score)
 	$ammo.text =  "Ammo : " + str(ammo)
 	load_best_score()
 
@@ -26,11 +27,11 @@ func _on_crosshair_shot(total_score : int, total_time : int ) -> void: #need to 
 		$ammo.text =  "Ammo : " + str(ammo)
 		return
 	
-	score_i += total_score
+	Score.score += total_score
 	add_time(total_time)
-	$HBoxContainer/VBoxContainer/score.text = "Score : " + str(score_i)
+	$HBoxContainer/VBoxContainer/score.text = "Score : " + str(Score.score)
 	
-	if score_i != 0 && score_i % 50 == 0 :
+	if Score.score != 0 && Score.score % 50 == 0 :
 		speed_up.emit()
 
 func _on_timer_timeout() -> void:
@@ -41,7 +42,7 @@ func add_time(to_add : int) -> void :
 	$stop_watch/timer.start()
 
 func _exit_tree() -> void:
-	save.best_score = score_i if score_i > score_b else score_b
+	save.best_score = Score.score if Score.score > score_b else score_b
 	ResourceSaver.save(save, save_path)
 	
 func load_best_score() -> void:

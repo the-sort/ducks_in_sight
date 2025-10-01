@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://drhfiu1qootmc"]
+[gd_scene load_steps=7 format=3 uid="uid://drhfiu1qootmc"]
 
 [ext_resource type="Script" uid="uid://blfpwerb0omqx" path="res://scripts/game_over.gd" id="1_xeevv"]
 [ext_resource type="Texture2D" uid="uid://dng6r3gcmsoih" path="res://assets/background/sky_background_desaturated.png" id="2_wqhvx"]
 [ext_resource type="FontFile" uid="uid://dbijyw6x47ojl" path="res://assets/fonts/yoster.ttf" id="3_tbwuq"]
 [ext_resource type="AudioStream" uid="uid://cj2yi3j2iu53" path="res://audio/554254__code_box__dapper-ducks-jingle.wav" id="4_racf3"]
+[ext_resource type="Texture2D" uid="uid://d072o7mjbrk2g" path="res://assets/button/button#1_desaturated.png" id="4_v3hpu"]
+[ext_resource type="Texture2D" uid="uid://rdq4x4kpluqx" path="res://assets/button/button_hover#1_desaturated.png" id="5_irg28"]
 
 [node name="game_over" type="Node"]
 script = ExtResource("1_xeevv")
@@ -63,21 +65,85 @@ grow_vertical = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="restart" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="Restart" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_tbwuq")
-theme_override_font_sizes/font_size = 100
-text = "RESTART"
+texture_normal = ExtResource("4_v3hpu")
+texture_pressed = ExtResource("4_v3hpu")
+texture_hover = ExtResource("5_irg28")
 
-[node name="quit" type="Button" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Restart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_tbwuq")
 theme_override_font_sizes/font_size = 100
-text = "QUIT"
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main_Menu" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v3hpu")
+texture_pressed = ExtResource("4_v3hpu")
+texture_hover = ExtResource("5_irg28")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Main_Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tbwuq")
+theme_override_font_sizes/font_size = 100
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v3hpu")
+texture_pressed = ExtResource("4_v3hpu")
+texture_hover = ExtResource("5_irg28")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tbwuq")
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_racf3")
 autoplay = true
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Main_Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

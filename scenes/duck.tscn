@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://du884gvjfxqgd"]
+
+[ext_resource type="Script" uid="uid://cdexfs50ndqmp" path="res://scripts/duck.gd" id="1_tils5"]
+[ext_resource type="Texture2D" uid="uid://deeoeamsy0dc8" path="res://assets/duck/duck_0.png" id="2_hwgnm"]
+[ext_resource type="Texture2D" uid="uid://blkfh61whepmq" path="res://assets/duck/duck_1.png" id="3_mwjdu"]
+[ext_resource type="Texture2D" uid="uid://dtku2krra6u0u" path="res://assets/duck/duck_2.png" id="4_eynlo"]
+[ext_resource type="Texture2D" uid="uid://33xb6tqf6eyu" path="res://assets/duck/duck_3.png" id="5_dcbfq"]
+[ext_resource type="AudioStream" uid="uid://dnxew36ccp1dl" path="res://audio/flight.mp3" id="6_mwjdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kee5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwgnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hwgnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mwjdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eynlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dcbfq")
+}],
+"loop": true,
+"name": &"flight",
+"speed": 30.0
+}]
+
+[node name="duck" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_tils5")
+
+[node name="duck_collision" type="CollisionShape2D" parent="."]
+scale = Vector2(8.41, 8.41)
+shape = SubResource("CircleShape2D_kee5c")
+debug_color = Color(0.949604, 0, 0.57268, 0.42)
+
+[node name="duck_animated" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.645, 0)
+sprite_frames = SubResource("SpriteFrames_hwgnm")
+animation = &"flight"
+frame_progress = 0.491548
+flip_h = true
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mwjdu")
+volume_db = -16.0
+autoplay = true
+parameters/looping = true
